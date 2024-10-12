@@ -1,0 +1,18 @@
+test: "Duplicate Vote Test"
+description: "Test the system's response to duplicate vote submissions"
+steps:
+  - step: "Initialize network and contract"
+    expected: "Network and contract should be initialized successfully"
+  - step: "Submit a valid vote"
+    input:
+      voterID: "voter123"
+      preferences: ["Alice", "Bob", "Charlie"]
+    expected: "Vote should be submitted successfully"
+  - step: "Attempt to submit the same vote again"
+    input:
+      voterID: "voter123"
+      preferences: ["Alice", "Bob", "Charlie"]
+    expected: "System should reject the duplicate vote with an error message"
+  - step: "Verify that only one vote was recorded"
+    verification: "Check that only one vote was recorded for voter123"
+    expected: "System should have only one vote for voter123"

@@ -1,0 +1,23 @@
+{
+  "test": "Invalid Vote Test",
+  "description": "Test the handling of invalid votes in the STV contract",
+  "steps": [
+    {
+      "step": "Initialize network and contract",
+      "expected": "Network and contract should be initialized successfully"
+    },
+    {
+      "step": "Submit a vote with invalid preferences",
+      "input": {
+        "voterID": "voter999",
+        "preferences": ["InvalidCandidate", "Bob"]
+      },
+      "expected": "Vote submission should fail with an appropriate error message"
+    },
+    {
+      "step": "Verify that no vote was recorded",
+      "verification": "Check that no vote was recorded for voter999",
+      "expected": "No vote should exist for voter999 in the system"
+    }
+  ]
+}

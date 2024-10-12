@@ -1,0 +1,34 @@
+{
+  "test": "Validate Input Test",
+  "description": "Test input validation for the voting function in the STV contract",
+  "steps": [
+    {
+      "step": "Initialize network and contract",
+      "expected": "Network and contract should be initialized successfully"
+    },
+    {
+      "step": "Submit a vote with invalid preferences",
+      "input": {
+        "voterID": "voter126",
+        "preferences": ["InvalidCandidate"]
+      },
+      "expected": "The system should reject the vote with an invalid candidate"
+    },
+    {
+      "step": "Submit a vote with incomplete preferences",
+      "input": {
+        "voterID": "voter127",
+        "preferences": ["Alice"]
+      },
+      "expected": "The system should reject the vote due to insufficient preferences"
+    },
+    {
+      "step": "Submit a valid vote",
+      "input": {
+        "voterID": "voter128",
+        "preferences": ["Alice", "Bob", "Charlie"]
+      },
+      "expected": "The system should accept the vote with valid preferences"
+    }
+  ]
+}

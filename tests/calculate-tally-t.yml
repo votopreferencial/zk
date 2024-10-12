@@ -1,0 +1,19 @@
+test: "Calculate Tally Test"
+description: "Test the vote tally calculation in the STV contract"
+steps:
+  - step: "Initialize network and contract"
+    expected: "Network and contract should be initialized successfully"
+  - step: "Submit multiple votes"
+    input:
+      - voterID: "voter123"
+        preferences: ["Alice", "Bob", "Charlie"]
+      - voterID: "voter124"
+        preferences: ["Bob", "Alice", "Charlie"]
+      - voterID: "voter125"
+        preferences: ["Charlie", "Bob", "Alice"]
+    expected: "Votes should be submitted successfully"
+  - step: "Invoke tally calculation"
+    expected: "Tally calculation should complete without error"
+  - step: "Verify tally results"
+    verification: "Check that the correct candidate is elected based on the STV algorithm"
+    expected: "The candidate with the highest transferable votes should be declared the winner"

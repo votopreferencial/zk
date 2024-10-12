@@ -1,0 +1,23 @@
+{
+  "test": "Vote Function Test",
+  "description": "Test the voting function in the STV contract",
+  "steps": [
+    {
+      "step": "Initialize network and contract",
+      "expected": "Network and contract should be initialized successfully"
+    },
+    {
+      "step": "Submit a vote",
+      "input": {
+        "voterID": "voter123",
+        "preferences": ["Alice", "Bob", "Charlie"]
+      },
+      "expected": "Vote should be submitted successfully"
+    },
+    {
+      "step": "Verify vote submission",
+      "verification": "Check that the vote was recorded correctly",
+      "expected": "Vote preferences for voter123 should match the submitted preferences"
+    }
+  ]
+}
